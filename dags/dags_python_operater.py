@@ -12,7 +12,7 @@ import random
 #1.PythonOperator : 어떤 파이썬 함수를 실행시키기 위한 Operater.
 #2.BranchPythonOperator : 파이썬 함수 실행 결과에 따라 Task를 선택적으로 실행
 #3.ShortCircuitOperator : 파이썬 함수 실행 결과에 따라 후행 Task를 실행하지 않고 종료
-#4.PythonVirtualenvOperator : 파이썬 가상환경 생성 후 Jod 수행하고 마무리되면 가상 환경을 삭제
+#4.PythonVirtualenvOperator : 파이썬 가상환경 생성 후 Job 수행하고 마무리되면 가상 환경을 삭제
 #5.ExternalPythonOperator : 기존에 존재하는 파이썬 가상환경에서 Job를 수행하게 함
 
 #Operater : 특정 행위를 할 수 있는 기능을 모아놓은 클래스 설계도

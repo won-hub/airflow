@@ -3,6 +3,10 @@ import pendulum
 import datetime
 from airflow.operators.bash import BashOperator
 
+#날짜 Template 변수 
+#data_interval_start(이전 배치일(=논리적 기준일)) : ds (yyyy-mm-dd 형식), ts (타임스탬프)
+#data_interval_end(배치일)
+
 with DAG(
     dag_id="dags_bash_with_template",
     schedule="10 0 * * *",

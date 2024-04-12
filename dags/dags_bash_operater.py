@@ -3,6 +3,15 @@ import datetime
 import pendulum
 from airflow.operators.bash import BashOperator
 
+#Bash Operater : 쉘 스크립트 명령을 수행하는 operater
+#Bash Operater가 Template를 사용할 수 있는 파라미터 : 
+#-> bash_command (str)
+#-> env (dict[str, str] | None)
+#-> append_env (bool)
+#-> output_encoding (str)
+#-> skip_exit_code (int)
+#-> cwd (str | None)
+
 with DAG(
     dag_id="dags_bash_operator",
     schedule="0 0 * * *",

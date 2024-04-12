@@ -11,6 +11,7 @@ with DAG(
     catchup=False
 ) as dag:
     
+    #Python →Email 오퍼레이터 Xcom 전달
     @task(task_id='something_task')
     def some_logic(**kwargs):
         from random import choice 

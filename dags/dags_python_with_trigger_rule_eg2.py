@@ -38,7 +38,7 @@ with DAG(
     def task_c():
         print('정상 처리')
 
-    @task(task_id='task_d', trigger_rule='none_skipped')
+    @task(task_id='task_d', trigger_rule='none_skipped') #none_skipped : Skip된 상위 Task가 없으면 실행(상위 Task가 성공, 실패여도 무방)
     def task_d():
         print('정상 처리')
 

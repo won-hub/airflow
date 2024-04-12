@@ -3,6 +3,10 @@ from datetime import datetime
 from airflow.operators.python import PythonOperator
 from airflow.decorators import task
 
+#Task 분기 처리 : 
+#2.task.branch 데커레이터
+#공통적으로 리턴 값으로 후행 Task의 id 를 str 또는 list로 리턴
+
 with DAG(
     dag_id='dags_python_with_branch_decorator',
     start_date=datetime(2023,4,1),

@@ -4,6 +4,15 @@ import datetime
 from airflow.operators.python import PythonOperator
 from airflow.decorators import task
 
+#Python Operator : **keworgs에 Template 변수들을 자동으로 제공
+#Python Operator가 Template을 쓸 수 있는 파라미터 : 
+#-> python_callable
+#-> op_kwargs
+#-> op_args
+#-> templates_dict
+#-> templates_exts
+#-> show_return_value_in_logs
+
 with DAG(
     dag_id="dags_python_template",
     schedule="30 9 * * *",

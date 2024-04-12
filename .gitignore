@@ -1,2 +1,7 @@
+#.gitignore : #Git 버전 관리에서 제외할 파일 목록을 지정하는 파일
+
+#Git으로 프로젝트 관리 시, 프로젝트 안의 특정파일들은 Git으로 관리할 필요가 없는 경우 :
+#NodeJS-Express로 개발할 때 npm module, Java 컴파일된(.class) 파일,AWS 비밀 키, JWT 비밀 키 등등..
+
 venv
 .env

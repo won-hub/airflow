@@ -19,7 +19,6 @@ class SeoulApiToCsvOperator(BaseOperator):
 
     #def execute(self, context) →
     #__init__ 생성자로 객체를 얻은 후 execute 메서드를 실행시키도록 되어 있음. 비즈니스 로직은 execute에 구현 필요
-
     def execute(self, context):
         import os
         

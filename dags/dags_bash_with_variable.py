@@ -17,7 +17,7 @@ with DAG(
     catchup=False
 ) as dag:
     
-    #1. Variable 라이브러리 이용, 파이썬 문법을 이용해 미리 가져오기 : 
+    #1.Variable 라이브러리 이용, 파이썬 문법을 이용해 미리 가져오기 : 
     #문제점 -> 스케줄러의 주기적 DAG 파싱 시 Variable.get개수만큼 DB연결을 일으켜 불필요한 부하 발생(스케줄러 과부하 원인 중 하나)
     var_value = Variable.get("sample_key")
 

@@ -2,9 +2,13 @@ from airflow.models.baseoperator import BaseOperator
 from airflow.hooks.base import BaseHook
 import pandas as pd 
 
+#Airflow는 오퍼레이터를 직접 만들어 사용할 수 있도록 클래스를 제공(BaseOperator)
+#BaseOperator 상속시 두 가지 메서드를 재정의해야 함(Overriding) → 1.def __init__ 2.def execute(self, context)
+
 class SeoulApiToCsvOperator(BaseOperator):
     template_fields = ('endpoint', 'path','file_name','base_dt')
 
+    #)def __init__ → 클래스에서 객체 생성시 객체에 대한 초기값 지정하는 함수
     def __init__(self, dataset_nm, path, file_name, base_dt=None, **kwargs):
         super().__init__(**kwargs)
         self.http_conn_id = 'openapi.seoul.go.kr'
@@ -12,6 +16,9 @@ class SeoulApiToCsvOperator(BaseOperator):
         self.file_name = file_name
         self.endpoint = '{{var.value.apikey_openapi_seoul_go_kr}}/json/' + dataset_nm
         self.base_dt = base_dt
+
+    #def execute(self, context) →
+    #__init__ 생성자로 객체를 얻은 후 execute 메서드를 실행시키도록 되어 있음. 비즈니스 로직은 execute에 구현 필요
 
     def execute(self, context):
         import os

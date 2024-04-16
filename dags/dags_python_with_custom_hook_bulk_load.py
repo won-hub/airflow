@@ -3,6 +3,13 @@ import pendulum
 from airflow.operators.python import PythonOperator
 from hooks.custom_postgres_hook import CustomPostgresHook
 
+#Custom Hook 개발
+#1.get_conn 메서드 구현
+# → DB와의 연결 세션 객체인 conn을 리턴하도록 구현
+#   (Airflow에서 등록한 Connection 정보를 담은 conn이 아님)
+# → BaseHook의 추상 메서드, 자식 클래스에서 구현 필요
+#2.bulk_load 메서드 구현 → 사용자 지정
+
 with DAG(
         dag_id='dags_python_with_custom_hook_bulk_load',
         start_date=pendulum.datetime(2023, 4, 1, tz='Asia/Seoul'),

@@ -16,7 +16,7 @@ class CustomPostgresHook(BaseHook):
         self.port = airflow_conn.port
 
         self.postgres_conn = psycopg2.connect(host=self.host, user=self.user, password=self.password, dbname=self.dbname, port=self.port)
-        return self.postgres_conn
+        return self.postgres_conn #airflow_conn과는 다른 함수
 
     def bulk_load(self, table_name, file_name, delimiter: str, is_header: bool, is_replace: bool):
         from sqlalchemy import create_engine

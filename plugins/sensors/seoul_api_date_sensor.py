@@ -10,7 +10,7 @@ from airflow.hooks.base import BaseHook
 
 class SeoulApiDateSensor(BaseSensorOperator):
     template_fields = ('endpoint',)
-    def __init__(self, dataset_nm, base_dt_col, day_off=0, **kwargs):
+    def __init__(self, dataset_nm, base_dt_col, day_off=0, **kwargs): #생성자 구현
         '''
         dataset_nm: 서울시 공공데이터 포털에서 센싱하고자 하는 데이터셋 명
         base_dt_col: 센싱 기준 컬럼 (yyyy.mm.dd... or yyyy/mm/dd... 형태만 가능)
@@ -23,7 +23,7 @@ class SeoulApiDateSensor(BaseSensorOperator):
         self.day_off = day_off
 
         
-    def poke(self, context):
+    def poke(self, context): #poke 메서드 재정의
         import requests
         import json
         from dateutil.relativedelta import relativedelta

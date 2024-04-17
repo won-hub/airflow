@@ -3,14 +3,14 @@ import pendulum
 import datetime
 from airflow.operators.email import EmailOperator
 
-#Email 오퍼레이터
+#Email 오퍼레이터 
 
-#사전 설정 작업(Google)
+#1.사전 설정 작업(Google)
 #구글메일서버사용 
 #G-mail → 설정 → 모든 설정 보기 → 전달 및 POP/IMAP →  IMAP사용
 #구글계정관리 → 보안 → 2단계 인증 → 앱 비밀번호 셋팅
 
-#사전 설정 작업(Airflow)
+#2.사전 설정 작업(Airflow)
 #Docker-compose.yaml 편집 (environment 항목에 추가)
 #AIRFLOW__SMTP__SMTP_HOST : 'smtp.gmail.com'
 #AIRFLOW__SMTP__SMTP_USER : '{gmail계정}'

@@ -4,11 +4,6 @@ from datetime import timedelta
 import pendulum
 from airflow.models import Variable
 
-#DAG 파라미터 :  DAG 단위로 적용(개별 오퍼레이터에 적용되지 않음) / default_args에 전달하면 안됨
-
-#Base 오퍼레이터 파라미터 : 개별 Task 단위로 적용 
-#Task마다 선언해줄 수 있지만 DAG 하위 모든 오퍼레이터에 적용 필요시 default_args를 통해 전달 가능
-
 email_str = Variable.get("email_target")
 email_lst = [email.strip() for email in email_str.split(',')]
 

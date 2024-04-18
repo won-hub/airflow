@@ -7,8 +7,8 @@ with today_dag as (
 	where is_paused = false
 	and is_active = true
 	and schedule_interval not in('null','"Dataset"')
-	and (date(next_dagrun_data_interval_start) between current_date -1 and current_date		-- 어제나 오늘 수행된 대상
-	or date(next_dagrun_data_interval_end) between current_date -1 and current_date)		-- 어제나 오늘이 배치일인 대상
+	and (date(next_dagrun_data_interval_start) between current_date -1 and current_date		
+	or date(next_dagrun_data_interval_end) between current_date -1 and current_date)		-- 어제 수행되었거나 오늘 예정인 대상
 )
 , today_dagrun as (
 	select 
